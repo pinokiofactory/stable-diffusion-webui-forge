@@ -2,7 +2,7 @@ const path = require('path')
 module.exports = {
   version: "2.0",
   title: "forge",
-  description: "",
+  description: "[NVIDIA ONLY] Stable Diffusion WebUI Forge https://github.com/lllyasviel/stable-diffusion-webui-forge",
   icon: "icon.jpeg",
   menu: async (kernel, info) => {
     let installed = info.exists("app/venv")
