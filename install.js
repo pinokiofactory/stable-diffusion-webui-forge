@@ -39,7 +39,7 @@ module.exports = {
           outputs: "app/outputs"
         }
       }
-    }
+    },
     {
       method: "fs.download",
       params: {
