@@ -45,7 +45,6 @@ module.exports = {
       params: {
         uri: [
           "https://huggingface.co/lllyasviel/flux1-dev-bnb-nf4/resolve/main/flux1-dev-bnb-nf4.safetensors?download=true",
-          "https://huggingface.co/lllyasviel/flux1_dev/resolve/main/flux1-dev-fp8.safetensors?download=true"
         ],
         dir: "app/models/Stable-diffusion"
       }
