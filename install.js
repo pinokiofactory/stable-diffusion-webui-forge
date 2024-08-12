@@ -32,14 +32,14 @@ module.exports = {
         ]
       }
     },
-//    {
-//      method: "fs.share",
-//      params: {
-//        drive: {
-//          outputs: "app/output"
-//        }
-//      }
-//    }
+    {
+      method: "fs.share",
+      params: {
+        drive: {
+          outputs: "app/outputs"
+        }
+      }
+    }
     {
       method: "fs.download",
       params: {
@@ -49,22 +49,22 @@ module.exports = {
         dir: "app/models/Stable-diffusion"
       }
     },
-    {
-      method: "fs.download",
-      params: {
-        uri: [
-          "https://huggingface.co/XLabs-AI/flux-lora-collection/resolve/main/anime_lora.safetensors?download=true",
-          "https://huggingface.co/XLabs-AI/flux-lora-collection/resolve/main/art_lora.safetensors?download=true",
-          "https://huggingface.co/XLabs-AI/flux-lora-collection/resolve/main/disney_lora.safetensors?download=true",
-          "https://huggingface.co/XLabs-AI/flux-lora-collection/resolve/main/furry_lora.safetensors?download=true",
-          "https://huggingface.co/XLabs-AI/flux-lora-collection/resolve/main/realism_lora.safetensors?download=true",
-          "https://huggingface.co/XLabs-AI/flux-lora-collection/resolve/main/scenery_lora.safetensors?download=true",
-          "https://huggingface.co/XLabs-AI/flux-lora-collection/resolve/main/mjv6_lora.safetensors?download=true",
-          "https://huggingface.co/linoyts/dog_flux_lora/resolve/main/pytorch_lora_weights.safetensors?download=true"
-        ],
-        dir: "app/models/Lora"
-      }
-    },
+//    {
+//      method: "fs.download",
+//      params: {
+//        uri: [
+//          "https://huggingface.co/XLabs-AI/flux-lora-collection/resolve/main/anime_lora.safetensors?download=true",
+//          "https://huggingface.co/XLabs-AI/flux-lora-collection/resolve/main/art_lora.safetensors?download=true",
+//          "https://huggingface.co/XLabs-AI/flux-lora-collection/resolve/main/disney_lora.safetensors?download=true",
+//          "https://huggingface.co/XLabs-AI/flux-lora-collection/resolve/main/furry_lora.safetensors?download=true",
+//          "https://huggingface.co/XLabs-AI/flux-lora-collection/resolve/main/realism_lora.safetensors?download=true",
+//          "https://huggingface.co/XLabs-AI/flux-lora-collection/resolve/main/scenery_lora.safetensors?download=true",
+//          "https://huggingface.co/XLabs-AI/flux-lora-collection/resolve/main/mjv6_lora.safetensors?download=true",
+//          "https://huggingface.co/linoyts/dog_flux_lora/resolve/main/pytorch_lora_weights.safetensors?download=true"
+//        ],
+//        dir: "app/models/Lora"
+//      }
+//    },
     {
       method: "self.set",
       params: {
