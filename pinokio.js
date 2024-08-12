@@ -2,7 +2,7 @@ const path = require('path')
 module.exports = {
   version: "2.0",
   title: "Forge",
-  description: "[NVIDIA ONLY] Run FLUX, optimized for low memory machines https://github.com/lllyasviel/stable-diffusion-webui-forge",
+  description: "[NVIDIA ONLY] The most efficient way to run FLUX (Optimized to run even on low memory machines, as low as 3GB VRAM with 512x512 resolution) https://github.com/lllyasviel/stable-diffusion-webui-forge",
   icon: "icon.jpeg",
   menu: async (kernel, info) => {
     let installed = info.exists("app/venv")
