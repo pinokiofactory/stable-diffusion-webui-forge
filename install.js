@@ -50,10 +50,29 @@ module.exports = {
       }
     },
     {
+      method: "fs.download",
+      params: {
+        uri: [
+          "https://huggingface.co/XLabs-AI/flux-lora-collection/resolve/main/anime_lora.safetensors?download=true",
+          "https://huggingface.co/XLabs-AI/flux-lora-collection/resolve/main/art_lora.safetensors?download=true",
+          "https://huggingface.co/XLabs-AI/flux-lora-collection/resolve/main/disney_lora.safetensors?download=true",
+          "https://huggingface.co/XLabs-AI/flux-lora-collection/resolve/main/furry_lora.safetensors?download=true",
+          "https://huggingface.co/XLabs-AI/flux-lora-collection/resolve/main/realism_lora.safetensors?download=true",
+          "https://huggingface.co/XLabs-AI/flux-lora-collection/resolve/main/scenery_lora.safetensors?download=true",
+          "https://huggingface.co/XLabs-AI/flux-lora-collection/resolve/main/mjv6_lora.safetensors?download=true",
+          "https://huggingface.co/linoyts/dog_flux_lora/resolve/main/pytorch_lora_weights.safetensors?download=true"
+        ],
+        dir: "app/models/Lora"
+      }
+    },
+    {
       method: "self.set",
       params: {
         "app/ui-config.json": {
           "txt2img/CFG Scale/value": 1.0
+        },
+        "app/config.json": {
+          "forge_preset": "flux"
         }
       }
     },
