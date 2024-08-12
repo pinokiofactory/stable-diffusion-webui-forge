@@ -1,7 +1,7 @@
 const path = require('path')
 module.exports = {
   version: "2.0",
-  title: "Stable Diffusion WebUI Forge",
+  title: "Forge",
   description: "[NVIDIA ONLY] Run FLUX, optimized for low memory machines https://github.com/lllyasviel/stable-diffusion-webui-forge",
   icon: "icon.jpeg",
   menu: async (kernel, info) => {
