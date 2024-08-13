@@ -58,7 +58,7 @@ module.exports = {
       }
     },
     {
-      when: "{{{gpu !== 'nvidia'}}",
+      when: "{{gpu !== 'nvidia'}}",
       method: "fs.download",
       params: {
         uri: [
