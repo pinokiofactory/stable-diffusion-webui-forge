@@ -24,11 +24,11 @@ module.exports = {
           svd: "app/models/svd",
           text_encoder: "app/models/text_encoder",
           z123: "app/models/z123",
-          Codeformer: "app/models/Codeformer",
-          ControlNet: "app/models/ControlNet",
-          ControlNetPreprocessor: "app/models/ControlNetPreprocessor",
+          codeformer: "app/models/Codeformer",
+          controlnet: "app/models/ControlNet",
+          controlnetpreprocessor: "app/models/ControlNetPreprocessor",
           diffusers: "app/models/diffusers",
-          GFPGAN: "app/models/GFPGAN",
+          gfpgan: "app/models/GFPGAN",
           hypernetworks: "app/models/hypernetworks",
           loras: "app/models/Lora"
         },
@@ -48,10 +48,21 @@ module.exports = {
       }
     },
     {
+      when: "{{gpu === 'nvidia'}}",
       method: "fs.download",
       params: {
         uri: [
           "https://huggingface.co/lllyasviel/flux1-dev-bnb-nf4/resolve/main/flux1-dev-bnb-nf4.safetensors?download=true",
+        ],
+        dir: "app/models/Stable-diffusion"
+      }
+    },
+    {
+      when: "{{{gpu !== 'nvidia'}}",
+      method: "fs.download",
+      params: {
+        uri: [
+          "https://huggingface.co/drbaph/FLUX.1-schnell-dev-merged-fp8-4step/resolve/main/FLUX.1-schnell-dev-merged-fp8-4step.safetensors?download=true",
         ],
         dir: "app/models/Stable-diffusion"
       }
