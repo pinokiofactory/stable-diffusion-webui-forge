@@ -24,12 +24,12 @@ module.exports = {
           svd: "app/models/svd",
           text_encoder: "app/models/text_encoder",
           z123: "app/models/z123",
-		      Codeformer: "app/models/Codeformer",
-		      ControlNet: "app/models/ControlNet",
-	        ControlNetPreprocessor: "app/models/ControlNetPreprocessor",
-	        diffusers: "app/models/diffusers",
-		      hypernetworks: "app/models/hypernetworks",
-	    	  Lora: "app/models/Lora"
+          Codeformer: "app/models/Codeformer",
+          ControlNet: "app/models/ControlNet",
+          ControlNetPreprocessor: "app/models/ControlNetPreprocessor",
+          diffusers: "app/models/diffusers",
+          hypernetworks: "app/models/hypernetworks",
+          Lora: "app/models/Lora"
         },
         peers: [
           "https://github.com/cocktailpeanutlabs/comfyui.git",
