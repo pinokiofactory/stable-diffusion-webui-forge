@@ -30,7 +30,7 @@ module.exports = {
           diffusers: "app/models/diffusers",
           GFPGAN: "app/models/GFPGAN",
           hypernetworks: "app/models/hypernetworks",
-          Lora: "app/models/loras"
+          loras: "app/models/Lora"
         },
         peers: [
           "https://github.com/cocktailpeanutlabs/comfyui.git",
