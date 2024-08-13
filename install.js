@@ -63,7 +63,7 @@ module.exports = {
       params: {
         message: [
           "conda install -y conda-forge::huggingface_hub",
-          "huggingface-cli download drbaph/FLUX.1-schnell-dev-merged-fp8-4step FLUX.1-schnell-dev-merged-fp8-4step.safetensors --local-dir app/models/Stable-diffusion"
+          "huggingface-cli download Kijai/flux-fp8 flux1-schnell-fp8.safetensors --local-dir app/models/Stable-diffusion"
         ]
       }
     },
