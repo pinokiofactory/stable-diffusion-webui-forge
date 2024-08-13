@@ -49,22 +49,22 @@ module.exports = {
     },
     {
       when: "{{gpu === 'nvidia'}}",
-      method: "fs.download",
+      method: "shell.run",
       params: {
-        uri: [
-          "https://huggingface.co/lllyasviel/flux1-dev-bnb-nf4/resolve/main/flux1-dev-bnb-nf4.safetensors?download=true",
-        ],
-        dir: "app/models/Stable-diffusion"
+        message: [
+          "conda install -y conda-forge::huggingface_hub",
+          "huggingface-cli download lllyasviel/flux1-dev-bnb-nf4 flux1-dev-bnb-nf4.safetensors --local-dir app/models/Stable-diffusion"
+        ]
       }
     },
     {
       when: "{{gpu !== 'nvidia'}}",
-      method: "fs.download",
+      method: "shell.run",
       params: {
-        uri: [
-          "https://huggingface.co/drbaph/FLUX.1-schnell-dev-merged-fp8-4step/resolve/main/FLUX.1-schnell-dev-merged-fp8-4step.safetensors?download=true",
-        ],
-        dir: "app/models/Stable-diffusion"
+        message: [
+          "conda install -y conda-forge::huggingface_hub",
+          "huggingface-cli download drbaph/FLUX.1-schnell-dev-merged-fp8-4step FLUX.1-schnell-dev-merged-fp8-4step.safetensors --local-dir app/models/Stable-diffusion"
+        ]
       }
     },
 //    {
