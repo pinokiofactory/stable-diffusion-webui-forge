@@ -23,7 +23,14 @@ module.exports = {
           karlo: "app/models/karlo",
           svd: "app/models/svd",
           text_encoder: "app/models/text_encoder",
-          z123: "app/models/z123"
+          z123: "app/models/z123",
+          Codeformer: "app/models/Codeformer",
+          ControlNet: "app/models/ControlNet",
+          ControlNetPreprocessor: "app/models/ControlNetPreprocessor",
+          diffusers: "app/models/diffusers",
+          GFPGAN: "app/models/GFPGAN",
+          hypernetworks: "app/models/hypernetworks",
+          loras: "app/models/Lora"
         },
         peers: [
           "https://github.com/cocktailpeanutlabs/comfyui.git",
