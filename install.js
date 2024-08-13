@@ -28,6 +28,7 @@ module.exports = {
           ControlNet: "app/models/ControlNet",
           ControlNetPreprocessor: "app/models/ControlNetPreprocessor",
           diffusers: "app/models/diffusers",
+          GFPGAN: "app/models/GFPGAN",
           hypernetworks: "app/models/hypernetworks",
           Lora: "app/models/Lora"
         },
