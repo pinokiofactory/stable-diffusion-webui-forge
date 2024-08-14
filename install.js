@@ -68,20 +68,20 @@ module.exports = {
         ]
       }
     },
-    {
-      method: "fs.download",
-      params: {
-        uri: [
-          "https://huggingface.co/XLabs-AI/flux-lora-collection/resolve/main/anime_lora_comfy_converted.safetensors?download=true",
-          "https://huggingface.co/XLabs-AI/flux-lora-collection/resolve/main/art_lora_comfy_converted.safetensors?download=true",
-          "https://huggingface.co/XLabs-AI/flux-lora-collection/resolve/main/disney_lora_comfy_converted.safetensors?download=true",
-          "https://huggingface.co/XLabs-AI/flux-lora-collection/resolve/main/mjv6_lora_comfy_converted.safetensors?download=true",
-          "https://huggingface.co/XLabs-AI/flux-lora-collection/resolve/main/realism_lora_comfy_converted.safetensors?download=true",
-          "https://huggingface.co/XLabs-AI/flux-lora-collection/resolve/main/scenery_lora_comfy_converted.safetensors?download=true"
-        ],
-        dir: "app/models/Lora"
-      }
-    },
+//    {
+//      method: "fs.download",
+//      params: {
+//        uri: [
+//          "https://huggingface.co/XLabs-AI/flux-lora-collection/resolve/main/anime_lora_comfy_converted.safetensors?download=true",
+//          "https://huggingface.co/XLabs-AI/flux-lora-collection/resolve/main/art_lora_comfy_converted.safetensors?download=true",
+//          "https://huggingface.co/XLabs-AI/flux-lora-collection/resolve/main/disney_lora_comfy_converted.safetensors?download=true",
+//          "https://huggingface.co/XLabs-AI/flux-lora-collection/resolve/main/mjv6_lora_comfy_converted.safetensors?download=true",
+//          "https://huggingface.co/XLabs-AI/flux-lora-collection/resolve/main/realism_lora_comfy_converted.safetensors?download=true",
+//          "https://huggingface.co/XLabs-AI/flux-lora-collection/resolve/main/scenery_lora_comfy_converted.safetensors?download=true"
+//        ],
+//        dir: "app/models/Lora"
+//      }
+//    },
     {
       method: "self.set",
       params: {

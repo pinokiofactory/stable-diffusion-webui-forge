@@ -100,7 +100,7 @@ module.exports = {
             { text: "FLUX1-Dev-fp8", icon: "fa-solid fa-download", href: "download-flux1-dev-fp8.json", mode: "refresh" },
             { text: "FLUX1-Schnell-nf4-v2", icon: "fa-solid fa-download", href: "download-flux1-schnell-nf4-v2.json", mode: "refresh" },
             { text: "FLUX1-Schnell-nf4", icon: "fa-solid fa-download", href: "download-flux1-schnell-nf4.json", mode: "refresh" },
-            { text: "XLabs Lora Collection", icon: "fa-solid fa-download", href: "download-xlabs.json", mode: "refresh" },
+//            { text: "XLabs Lora Collection", icon: "fa-solid fa-download", href: "download-xlabs.json", mode: "refresh" },
             { text: "SDXL", icon: "fa-solid fa-download", href: "download-sdxl.json", mode: "refresh" },
             { text: "SDXL Turbo", icon: "fa-solid fa-download", href: "download-turbo.json", mode: "refresh" },
             { text: "Stable Video XT 1.1", icon: "fa-solid fa-download", href: "download-svd-xt-1.1.json", mode: "refresh" },
