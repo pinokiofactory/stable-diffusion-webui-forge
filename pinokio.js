@@ -8,6 +8,7 @@ module.exports = {
     let installed = info.exists("app/venv")
     
     let downloading = [
+      "download-xlabs.json",
       "download-flux1-schnell-nf4-v2.json",
       "download-flux1-schnell-nf4.json",
       "download-flux1-dev-fp8.json",
