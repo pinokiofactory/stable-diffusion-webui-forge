@@ -9,7 +9,7 @@ module.exports = {
         TOKENIZERS_PARALLELISM: "false"
       },
       message: "{{platform === 'win32' ? 'webui-user.bat' : 'bash webui.sh -f'}}",
-      venv: "app/venv",
+      venv: "venv",
       on: [{ "event": "/http:\/\/[0-9.:]+/", "done": true }]
     }
   }, {
