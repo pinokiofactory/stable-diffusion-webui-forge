@@ -23,7 +23,7 @@ module.exports = {
           karlo: "app/models/karlo",
           svd: "app/models/svd",
 //          text_encoder: "app/models/text_encoder",
-          clip: "app/models/textencoder",
+          clip: "app/models/text_encoder",
           z123: "app/models/z123",
           codeformer: "app/models/Codeformer",
           controlnet: "app/models/ControlNet",
