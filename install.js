@@ -33,6 +33,7 @@ module.exports = {
           loras: "app/models/Lora"
         },
         peers: [
+          "https://github.com/pinokiofactory/comfy.git",
           "https://github.com/cocktailpeanutlabs/comfyui.git",
           "https://github.com/cocktailpeanutlabs/fooocus.git",
           "https://github.com/cocktailpeanutlabs/automatic1111.git",
