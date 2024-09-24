@@ -9,68 +9,6 @@ module.exports = {
         ]
       }
     },
-    {
-      method: "fs.share",
-      params: {
-        drive: {
-          upscale_models: [
-            "app/models/ESRGAN",
-          ],
-          checkpoints: "app/models/Stable-diffusion",
-          vae_approx: "app/models/VAE-approx",
-          vae: "app/models/VAE",
-          deepbooru: "app/models/deepbooru",
-          karlo: "app/models/karlo",
-          svd: "app/models/svd",
-//          text_encoder: "app/models/text_encoder",
-          embeddings: "app/embeddings",
-          clip: "app/models/text_encoder",
-          z123: "app/models/z123",
-          codeformer: "app/models/Codeformer",
-          controlnet: "app/models/ControlNet",
-          controlnetpreprocessor: "app/models/ControlNetPreprocessor",
-          diffusers: "app/models/diffusers",
-          gfpgan: "app/models/GFPGAN",
-          hypernetworks: "app/models/hypernetworks",
-          loras: "app/models/Lora"
-        },
-        peers: [
-          "https://github.com/pinokiofactory/comfy.git",
-          "https://github.com/cocktailpeanutlabs/comfyui.git",
-          "https://github.com/cocktailpeanutlabs/fooocus.git",
-          "https://github.com/cocktailpeanutlabs/automatic1111.git",
-        ]
-      }
-    },
-    {
-      method: "fs.share",
-      params: {
-        drive: {
-          outputs: "app/outputs"
-        }
-      }
-    },
-    {
-      when: "{{gpu === 'nvidia'}}",
-      method: "shell.run",
-      params: {
-        message: [
-          "conda install -y conda-forge::huggingface_hub",
-          //"huggingface-cli download lllyasviel/flux1-dev-bnb-nf4 flux1-dev-bnb-nf4.safetensors --local-dir app/models/Stable-diffusion"
-          "huggingface-cli download lllyasviel/flux1-dev-bnb-nf4 flux1-dev-bnb-nf4-v2.safetensors --local-dir app/models/Stable-diffusion"
-        ]
-      }
-    },
-    {
-      when: "{{gpu !== 'nvidia'}}",
-      method: "shell.run",
-      params: {
-        message: [
-          "conda install -y conda-forge::huggingface_hub",
-          "huggingface-cli download lllyasviel/flux1_dev flux1-dev-fp8.safetensors --local-dir app/models/Stable-diffusion"
-        ]
-      }
-    },
 //    {
 //      method: "fs.download",
 //      params: {
@@ -106,6 +44,68 @@ module.exports = {
         path: "app",
         on: [{ "event": "/http:\/\/[0-9.:]+/", "kill": true }]
       }
-    }
+    },
+    {
+      method: "fs.share",
+      params: {
+        drive: {
+          upscale_models: [
+            "app/models/ESRGAN",
+          ],
+          checkpoints: "app/models/Stable-diffusion",
+          vae_approx: "app/models/VAE-approx",
+          vae: "app/models/VAE",
+          deepbooru: "app/models/deepbooru",
+          karlo: "app/models/karlo",
+          svd: "app/models/svd",
+//          text_encoder: "app/models/text_encoder",
+          embeddings: "app/embeddings",
+          clip: "app/models/text_encoder",
+          z123: "app/models/z123",
+          codeformer: "app/models/Codeformer",
+          controlnet: "app/models/ControlNet",
+          controlnetpreprocessor: "app/models/ControlNetPreprocessor",
+          diffusers: "app/models/diffusers",
+          gfpgan: "app/models/GFPGAN",
+          hypernetworks: "app/models/hypernetworks",
+          loras: "app/models/Lora"
+        },
+        peers: [
+          "https://github.com/pinokiofactory/comfy.git",
+          "https://github.com/cocktailpeanutlabs/comfyui.git",
+          "https://github.com/cocktailpeanutlabs/fooocus.git",
+          "https://github.com/cocktailpeanutlabs/automatic1111.git",
+        ]
+      }
+    },
+    {
+      when: "{{gpu === 'nvidia'}}",
+      method: "shell.run",
+      params: {
+        message: [
+          "conda install -y conda-forge::huggingface_hub",
+          //"huggingface-cli download lllyasviel/flux1-dev-bnb-nf4 flux1-dev-bnb-nf4.safetensors --local-dir app/models/Stable-diffusion"
+          "huggingface-cli download lllyasviel/flux1-dev-bnb-nf4 flux1-dev-bnb-nf4-v2.safetensors --local-dir app/models/Stable-diffusion"
+        ]
+      }
+    },
+    {
+      when: "{{gpu !== 'nvidia'}}",
+      method: "shell.run",
+      params: {
+        message: [
+          "conda install -y conda-forge::huggingface_hub",
+          "huggingface-cli download lllyasviel/flux1_dev flux1-dev-fp8.safetensors --local-dir app/models/Stable-diffusion"
+        ]
+      }
+    },
+    {
+      method: "fs.share",
+      params: {
+        drive: {
+          outputs: "app/outputs"
+        }
+      }
+    },
   ]
 }
