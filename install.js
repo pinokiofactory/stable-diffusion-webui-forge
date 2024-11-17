@@ -71,6 +71,7 @@ module.exports = {
           loras: "app/models/Lora"
         },
         peers: [
+          "https://github.com/cocktailpeanut/fluxgym.git",
           "https://github.com/pinokiofactory/comfy.git",
           "https://github.com/cocktailpeanutlabs/comfyui.git",
           "https://github.com/cocktailpeanutlabs/fooocus.git",
