@@ -37,6 +37,13 @@ module.exports = {
     {
       method: "shell.run",
       params: {
+        message: " ",
+        venv: "app/venv"
+      }
+    },
+    {
+      method: "shell.run",
+      params: {
         message: "{{platform === 'win32' ? 'webui-user.bat' : 'bash webui.sh -f'}}",
         env: {
           SD_WEBUI_RESTARTING: 1,
