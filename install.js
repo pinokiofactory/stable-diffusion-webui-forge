@@ -60,7 +60,8 @@ module.exports = {
         "venv": "venv",
         "path": "app",
         "message": [
-          "uv pip install --pre torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/cu128 --force-reinstall"
+          "uv pip install --pre torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/cu128 --force-reinstall",
+          "uv pip install numpy==1.26.2 --force-reinstall"
         ]
       },
     },
