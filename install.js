@@ -61,11 +61,28 @@ module.exports = {
         "path": "app",
         "message": [
           "uv pip install --pre torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/cu128 --force-reinstall",
-          "uv pip install numpy==1.26.2 --force-reinstall"
+          "uv pip install numpy==1.26.2 --force-reinstall",
+          "uv pip install -U bitsandbytes --force-reinstall"
         ]
       },
+      "next": "share",
+    },
+    // nvidia rest
+    {
+      "method": "shell.run",
+      "params": {
+        "venv": "venv",
+        "path": "app",
+        "message": [
+          "uv pip install -U bitsandbytes --force-reinstall",
+          "uv pip install https://github.com/woct0rdho/triton-windows/releases/download/v3.2.0-windows.post9/triton-3.2.0-cp310-cp310-win_amd64.whl --force-reinstall",
+          "uv pip install https://github.com/deepbeepmeep/SageAttention/raw/refs/heads/main/releases/sageattention-2.1.0-cp310-cp310-win_amd64.whl --force-reinstall"
+        ]
+      },
+      "next": "share",
     },
     {
+      id: "share",
       method: "fs.share",
       params: {
         drive: {
@@ -104,7 +121,6 @@ module.exports = {
       method: "shell.run",
       params: {
         message: [
-          "conda install -y conda-forge::huggingface_hub",
           //"huggingface-cli download lllyasviel/flux1-dev-bnb-nf4 flux1-dev-bnb-nf4.safetensors --local-dir app/models/Stable-diffusion"
           "huggingface-cli download lllyasviel/flux1-dev-bnb-nf4 flux1-dev-bnb-nf4-v2.safetensors --local-dir app/models/Stable-diffusion"
         ]
@@ -115,7 +131,6 @@ module.exports = {
       method: "shell.run",
       params: {
         message: [
-          "conda install -y conda-forge::huggingface_hub",
           "huggingface-cli download lllyasviel/flux1_dev flux1-dev-fp8.safetensors --local-dir app/models/Stable-diffusion"
         ]
       }
