@@ -69,6 +69,7 @@ module.exports = {
     },
     // nvidia rest
     {
+      "when": "{{gpu === 'nvidia' && platform === 'win32'}}",
       "method": "shell.run",
       "params": {
         "venv": "venv",
