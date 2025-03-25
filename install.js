@@ -60,28 +60,28 @@ module.exports = {
         "venv": "venv",
         "path": "app",
         "message": [
+          "uv pip install -U bitsandbytes --force-reinstall",
           "uv pip install --pre torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/cu128 --force-reinstall",
           "uv pip install numpy==1.26.2 --force-reinstall",
-          "uv pip install -U bitsandbytes --force-reinstall"
         ]
       },
-      "next": "share",
+//      "next": "share",
     },
-    // nvidia rest
-    {
-      "when": "{{gpu === 'nvidia' && platform === 'win32'}}",
-      "method": "shell.run",
-      "params": {
-        "venv": "venv",
-        "path": "app",
-        "message": [
-          "uv pip install -U bitsandbytes --force-reinstall",
-          "uv pip install https://github.com/woct0rdho/triton-windows/releases/download/v3.2.0-windows.post9/triton-3.2.0-cp310-cp310-win_amd64.whl --force-reinstall",
-          "uv pip install https://github.com/deepbeepmeep/SageAttention/raw/refs/heads/main/releases/sageattention-2.1.0-cp310-cp310-win_amd64.whl --force-reinstall"
-        ]
-      },
-      "next": "share",
-    },
+//    // nvidia rest
+//    {
+//      "when": "{{gpu === 'nvidia' && platform === 'win32'}}",
+//      "method": "shell.run",
+//      "params": {
+//        "venv": "venv",
+//        "path": "app",
+//        "message": [
+//          "uv pip install -U bitsandbytes --force-reinstall",
+//          "uv pip install https://github.com/woct0rdho/triton-windows/releases/download/v3.2.0-windows.post9/triton-3.2.0-cp310-cp310-win_amd64.whl --force-reinstall",
+//          "uv pip install https://github.com/deepbeepmeep/SageAttention/raw/refs/heads/main/releases/sageattention-2.1.0-cp310-cp310-win_amd64.whl --force-reinstall"
+//        ]
+//      },
+//      "next": "share",
+//    },
     {
       id: "share",
       method: "fs.share",
