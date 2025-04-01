@@ -37,17 +37,14 @@ module.exports = {
     {
       method: "shell.run",
       params: {
-        message: " ",
+        message: "uv pip install pydantic==2.10.6",
         venv: "app/venv"
       }
     },
     {
       method: "shell.run",
       params: {
-        message: [
-          "uv pip install pydantic==2.10.6",
-          "{{platform === 'win32' ? 'webui-user.bat' : 'bash webui.sh -f'}}"
-        ],
+        message: "{{platform === 'win32' ? 'webui-user.bat' : 'bash webui.sh -f'}}",
         env: {
           SD_WEBUI_RESTARTING: 1,
         },
