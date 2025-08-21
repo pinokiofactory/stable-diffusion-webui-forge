@@ -61,7 +61,7 @@ module.exports = {
         "path": "app",
         "message": [
           "uv pip install -U bitsandbytes --force-reinstall",
-          "uv pip install torch==2.7.0 torchvision==0.22.0 torchaudio==2.7.0 --index-url https://download.pytorch.org/whl/cu128 --force-reinstall --no-deps",
+          "uv pip install torch==2.7.0 torchvision==0.22.0 torchaudio==2.7.0 xformers==0.0.30 --index-url https://download.pytorch.org/whl/cu128 --force-reinstall --no-deps",
           "uv pip install numpy==1.26.2 --force-reinstall",
         ]
       },
