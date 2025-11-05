@@ -22,19 +22,15 @@ module.exports = {
     {
       method: "shell.run",
       params: {
-        message: "uv pip install pydantic==2.10.6",
-        venv: "app/venv"
-      }
-    },
-    {
-      method: "shell.run",
-      params: {
         message: "{{platform === 'win32' ? 'webui-user.bat' : 'bash webui.sh -f'}}",
         env: {
           SD_WEBUI_RESTARTING: 1,
         },
         path: "app",
-        on: [{ "event": "/http:\/\/[0-9.:]+/", "kill": true }]
+        on: [{
+          "event": "/Launching Web UI with arguments: /",
+          "kill": true
+        }]
       }
     },
     // nvidia 50 series
