@@ -53,7 +53,6 @@ module.exports = {
       },
     },
     {
-      id: "share",
       method: "fs.share",
       params: {
         drive: {
@@ -111,6 +110,6 @@ module.exports = {
           outputs: "app/outputs"
         }
       }
-    },
+    }
   ]
 }
