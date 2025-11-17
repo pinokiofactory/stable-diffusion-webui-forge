@@ -1,6 +1,8 @@
 module.exports = {
+  requires: {
+    bundle: "ai"
+  },
   run: [
-    // Edit this step to customize the git repository to use
     {
       method: "shell.run",
       params: {
@@ -9,20 +11,12 @@ module.exports = {
         ]
       }
     },
-//    {
-//      method: "fs.download",
-//      params: {
-//        uri: [
-//          "https://huggingface.co/XLabs-AI/flux-lora-collection/resolve/main/anime_lora_comfy_converted.safetensors?download=true",
-//          "https://huggingface.co/XLabs-AI/flux-lora-collection/resolve/main/art_lora_comfy_converted.safetensors?download=true",
-//          "https://huggingface.co/XLabs-AI/flux-lora-collection/resolve/main/disney_lora_comfy_converted.safetensors?download=true",
-//          "https://huggingface.co/XLabs-AI/flux-lora-collection/resolve/main/mjv6_lora_comfy_converted.safetensors?download=true",
-//          "https://huggingface.co/XLabs-AI/flux-lora-collection/resolve/main/realism_lora_comfy_converted.safetensors?download=true",
-//          "https://huggingface.co/XLabs-AI/flux-lora-collection/resolve/main/scenery_lora_comfy_converted.safetensors?download=true"
-//        ],
-//        dir: "app/models/Lora"
-//      }
-//    },
+    {
+      method: "shell.run",
+      params: {
+        message: "conda update -y -c conda-forge huggingface_hub"
+      }
+    },
     {
       method: "self.set",
       params: {
@@ -37,19 +31,15 @@ module.exports = {
     {
       method: "shell.run",
       params: {
-        message: " ",
-        venv: "app/venv"
-      }
-    },
-    {
-      method: "shell.run",
-      params: {
         message: "{{platform === 'win32' ? 'webui-user.bat' : 'bash webui.sh -f'}}",
         env: {
           SD_WEBUI_RESTARTING: 1,
         },
         path: "app",
-        on: [{ "event": "/http:\/\/[0-9.:]+/", "kill": true }]
+        on: [{
+          "event": "/Launching Web UI with arguments: /",
+          "kill": true
+        }]
       }
     },
     // nvidia 50 series
@@ -60,30 +50,11 @@ module.exports = {
         "venv": "venv",
         "path": "app",
         "message": [
-          "uv pip install -U bitsandbytes --force-reinstall",
-          "uv pip install --pre torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/cu128 --force-reinstall",
-          "uv pip install numpy==1.26.2 --force-reinstall",
+          "uv pip install torch==2.7.0 torchvision==0.22.0 torchaudio==2.7.0 xformers==0.0.30 --index-url https://download.pytorch.org/whl/cu128 --force-reinstall --no-deps"
         ]
       },
-//      "next": "share",
     },
-//    // nvidia rest
-//    {
-//      "when": "{{gpu === 'nvidia' && platform === 'win32'}}",
-//      "method": "shell.run",
-//      "params": {
-//        "venv": "venv",
-//        "path": "app",
-//        "message": [
-//          "uv pip install -U bitsandbytes --force-reinstall",
-//          "uv pip install https://github.com/woct0rdho/triton-windows/releases/download/v3.2.0-windows.post9/triton-3.2.0-cp310-cp310-win_amd64.whl --force-reinstall",
-//          "uv pip install https://github.com/deepbeepmeep/SageAttention/raw/refs/heads/main/releases/sageattention-2.1.0-cp310-cp310-win_amd64.whl --force-reinstall"
-//        ]
-//      },
-//      "next": "share",
-//    },
     {
-      id: "share",
       method: "fs.share",
       params: {
         drive: {
@@ -96,7 +67,6 @@ module.exports = {
           deepbooru: "app/models/deepbooru",
           karlo: "app/models/karlo",
           svd: "app/models/svd",
-//          text_encoder: "app/models/text_encoder",
           embeddings: "app/embeddings",
           clip: "app/models/text_encoder",
           z123: "app/models/z123",
@@ -122,8 +92,7 @@ module.exports = {
       method: "shell.run",
       params: {
         message: [
-          //"huggingface-cli download lllyasviel/flux1-dev-bnb-nf4 flux1-dev-bnb-nf4.safetensors --local-dir app/models/Stable-diffusion"
-          "huggingface-cli download lllyasviel/flux1-dev-bnb-nf4 flux1-dev-bnb-nf4-v2.safetensors --local-dir app/models/Stable-diffusion"
+          "hf download lllyasviel/flux1-dev-bnb-nf4 flux1-dev-bnb-nf4-v2.safetensors --local-dir app/models/Stable-diffusion"
         ]
       }
     },
@@ -132,7 +101,7 @@ module.exports = {
       method: "shell.run",
       params: {
         message: [
-          "huggingface-cli download lllyasviel/flux1_dev flux1-dev-fp8.safetensors --local-dir app/models/Stable-diffusion"
+          "hf download lllyasviel/flux1_dev flux1-dev-fp8.safetensors --local-dir app/models/Stable-diffusion"
         ]
       }
     },
@@ -143,6 +112,6 @@ module.exports = {
           outputs: "app/outputs"
         }
       }
-    },
+    }
   ]
 }
