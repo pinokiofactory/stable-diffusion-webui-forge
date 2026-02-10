@@ -31,6 +31,14 @@ module.exports = {
     {
       method: "shell.run",
       params: {
+        venv: "venv",
+        path: "app",
+        message: "uv pip install wheel"
+      }
+    },
+    {
+      method: "shell.run",
+      params: {
         message: "{{platform === 'win32' ? 'webui-user.bat' : 'bash webui.sh -f'}}",
         env: {
           SD_WEBUI_RESTARTING: 1,
@@ -51,7 +59,7 @@ module.exports = {
         "path": "app",
         "message": [
           "uv pip install torch==2.7.0 torchvision==0.22.0 torchaudio==2.7.0 xformers==0.0.30 --index-url https://download.pytorch.org/whl/cu128 --force-reinstall",
-          "uv pip install numpy1.26.2"
+          "uv pip install numpy==1.26.2"
         ]
       },
     },
