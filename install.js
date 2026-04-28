@@ -55,6 +55,7 @@ module.exports = {
       "when": "{{gpu === 'nvidia' && kernel.gpu_model && / 50.+/.test(kernel.gpu_model) }}",
       "method": "shell.run",
       "params": {
+        "bluefairy": "off",
         "venv": "venv",
         "path": "app",
         "message": [
